@@ -33,3 +33,5 @@ Tested with Puppet Enterprise 3.2.x
 ## Dependencies
 
 `puppetlabs/stdlib` for parameter validation
+
+[![Build Status](https://travis-ci.org/joshbeard/puppet-pe_console_timeout.svg?branch=master)](https://travis-ci.org/joshbeard/puppet-pe_console_timeout)
