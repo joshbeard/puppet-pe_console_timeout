@@ -25,6 +25,10 @@ class pe_console_timeout (
   $timeout_interval = '1200',
 ) {
 
+  if (true != $::is_pe) {
+    fail("${module_name} only works on Puppet Enterprise")
+  }
+
   validate_re($timeout_interval, '^\d+$', 'timeout_interval must be numbers')
 
   file_line { 'maximum_session_lifetime':
