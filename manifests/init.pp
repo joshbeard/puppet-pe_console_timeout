@@ -25,7 +25,7 @@ class pe_console_timeout (
   $timeout_interval = '1200',
 ) {
 
-  if (true != $::is_pe) {
+  if (false == $::is_pe) {
     fail("${module_name} only works on Puppet Enterprise")
   }
 

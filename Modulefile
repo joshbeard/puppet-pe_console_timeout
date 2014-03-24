@@ -1,4 +1,4 @@
-name    'pe_console_timeout'
+name    'joshbeard-pe_console_timeout'
 version '0.0.1'
 source 'git://github.com/joshbeard/puppet-pe_console_timeout'
 author 'Josh Beard'
