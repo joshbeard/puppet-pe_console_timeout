@@ -5,13 +5,16 @@
 # === Parameters
 #
 # [*timeout_interval*]
-#   Session timeout interval, in seconds.  Default: 1200
+#   Integer. Session timeout interval, in seconds.  Default: 1200
 #
 # === Examples
 #
 #  class { pe_console_timeout:
-#    timeout_interval = '3600'
+#    timeout_interval = 3600
 #  }
+#
+#  OR in Hiera:
+#    pe_console_timeout::timeout_interval: 3600
 #
 # === Authors
 #
@@ -22,14 +25,16 @@
 # Copyright 2014 Puppet Labs
 #
 class pe_console_timeout (
-  $timeout_interval = '1200',
+  $timeout_interval = 1200,
 ) {
 
-  if (false == $::is_pe) {
+  if !str2bool($::is_pe) {
     fail("${module_name} only works on Puppet Enterprise")
   }
 
-  validate_re($timeout_interval, '^\d+$', 'timeout_interval must be numbers')
+  if !(is_integer($timeout_interval)) {
+    fail('timeout_interval must be an integer')
+  }
 
   file_line { 'maximum_session_lifetime':
     ensure => present,
