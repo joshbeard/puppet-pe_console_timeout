@@ -1,5 +1,5 @@
 name    'joshbeard-pe_console_timeout'
-version '0.0.3'
+version '0.0.4'
 source 'git://github.com/joshbeard/puppet-pe_console_timeout'
 author 'Josh Beard'
 license 'Apache Version 2.0'
