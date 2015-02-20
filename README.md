@@ -4,6 +4,10 @@
 
 Allows easy customization of the Puppet Enterprise Console session timeout.
 
+__NOTE:__ This module only works for Puppet Enterprise 3.x.  For Puppet
+Enterprise 3.7+, refer to
+[https://docs.puppetlabs.com/pe/latest/console_config.html](https://docs.puppetlabs.com/pe/latest/console_config.html)
+
 The default is 1200 seconds.
 
 ## Parameters

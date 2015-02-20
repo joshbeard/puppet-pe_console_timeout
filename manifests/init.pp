@@ -36,6 +36,10 @@ class pe_console_timeout (
     fail('timeout_interval must be an integer')
   }
 
+  if versioncmp($::pe_version, '3.7.0') >= 0 {
+    fail("${module_name} does not work on PE >= 3.7")
+  }
+
   file_line { 'maximum_session_lifetime':
     ensure => present,
     path   => '/etc/puppetlabs/rubycas-server/config.yml',
